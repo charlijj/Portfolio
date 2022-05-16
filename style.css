@@ -1,0 +1,127 @@
+body, html {
+
+    background-color: rgb(69, 69, 69);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.navBar {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    width: auto;
+
+    background-color: black;
+}
+
+.navBar a { 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 33.33%;
+
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+}
+
+.navBar a:hover { 
+
+    background-color: white;
+    color: black;
+    
+
+}
+
+.navBar a:visited { 
+
+    color: white;
+
+}
+
+.navBar a:visited:hover { 
+
+    background-color: white;
+    color: black;
+
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+.header {
+
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: 75px;
+
+    bottom: 0;
+    
+    background-color: black;
+}
+
+.footer a {
+
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+
+    color: rgb(195, 195, 195);
+}
+
+.footer a:visited {
+
+    color: white;
+}
+
+.footer a:visited:hover {
+
+    color: rgb(195, 195, 195);
+}
+
+.footerItem {
+
+    margin: 0 5%;
+
+}
+
+.footerItem a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin: 0;
+}
+
+.footerItem a:hover {
+
+    border-radius: 25px;
+    background-color: aliceblue;
+}
+
