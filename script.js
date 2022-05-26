@@ -73,6 +73,7 @@ function playVisualizer() {
 
             if (x > 220)
             {
+                x = 0;
                 break;
             }
         }
