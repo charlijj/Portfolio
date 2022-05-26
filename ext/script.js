@@ -1,7 +1,6 @@
 // Jasper Charlinski
 // for portfolio
 
-window.addEventListener('resize', playVisualizer);
 
 let canvas = document.getElementById(`backgroundCanvas`);
 let border = document.getElementById(`border`);
@@ -11,6 +10,11 @@ let ctx = canvas.getContext(`2d`);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+if (window.innerWidth > 600)
+{
+    window.addEventListener('resize', playVisualizer);
+}
+
 // --------------------------------------------------------------
 
 function playVisualizer() {
@@ -18,7 +22,7 @@ function playVisualizer() {
     const audioCtx = new AudioContext();
     let analyser = audioCtx.createAnalyser();
 
-    const audio = new Audio(`song.mp3`);
+    const audio = new Audio(`ext/song.mp3`);
     let audioSource = audioCtx.createMediaElementSource(audio);
     audioSource.connect(analyser);
 

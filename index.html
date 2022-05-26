@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ext/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
@@ -288,7 +288,8 @@
 
             .headingBanner {
 
-                    font-size: 23px;
+                font-size: 23px;
+                width: 90%;
             }
 
             #slide {
@@ -333,7 +334,7 @@
         }
 
     </style>
-    <title>JasperC</title>
+    <title>Jasper's Portfolio</title>
 </head>
 <body>
 
@@ -378,9 +379,9 @@
         <div class="aboutMeContainer" >
             <div class="containerHeader">About Me</div>
             <div class="aboutMe">
-                <p>Hi! My name is Jasper, I am a 19-year-old computer science student currently enrolled in the Computer Science Diploma Program at Vancouver Island University. Through my studies, I have become proficient with C++, JavaScript, CSS, and HTML5. I am also comfortable navigating Linux and Windows terminal environments and am familiar with Git. I have just completed my first year of university with straight A grades and am now seeking an internship opportunity. My goal in getting an internship is to further my programing skills as well as get a better understanding of the tech industry.</p>
+                <p>Hi! My name is Jasper, I am a 19-year-old computer science student currently enrolled in the Computer Science Diploma Program at Vancouver Island University. Through my studies, I have become proficient with C++, JavaScript, CSS, and HTML5. I am comfortable working with Linux and Windows terminal environments and am familiar with Git. I have just completed my first year of university with straight A grades and am now seeking an internship opportunity. My goal in getting an internship is to further my programing skills and knowledge as well as get a better understanding of the tech industry.</p>
                 <p>Because I am a first time CO-OP student, I am eligible for the <strong>70%</strong> TECHNATION<sup style="font-size: 10px;">CA</sup> wage subsidy. </p>
-                <p>Link to TECHNATION<sup style="font-size: 10px;">CA</sup> information sheet: <a href="TN_EmployerProgramGuide.pdf" target="_blank">TN_EmployerProgramGuide.pdf</a></p>
+                <p>TECHNATION<sup style="font-size: 10px;">CA</sup> employment subsidy information sheet: <a href="ext/TN_EmployerProgramGuide.pdf" target="_blank">TN_EmployerProgramGuide.pdf</a></p>
             </div>
         </div>
 
@@ -408,30 +409,12 @@
 
         <!-- Facebook icon credit -->
         <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-        <div class="footerItem"><a href="#" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
+        <div class="footerItem"><a href="https://www.facebook.com/jasper.charlinski" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
     </div>
 
     <script>
 
-        function contact () {
-
-            window.location = `contact.html`;
-        }
-
-        function projects () {
-
-            window.location = `projects.html`;
-        }
-
-        function resume () {
-
-            window.location = `contact.html`;
-        }
-
-        // ----------------------------------
-
         const canvas =  document.getElementById(`headingCanvas`);
-
         canvas.addEventListener(`mouseover`, () => {moveCvs(event)});
         canvas.addEventListener(`mouseleave`, () => {moveCvs(event)});
         canvas.addEventListener(`click`, () => {moveCvs(event)});
@@ -441,7 +424,7 @@
 
             if (event.clientX > 700)
             {
-                canvas.style.backgroundPosition = `30% 40%`;
+                canvas.style.backgroundPosition = `10% 20%`;
 
             }
 
@@ -459,7 +442,7 @@
 
             else
             {
-                canvas.style.backgroundPosition = `70% 60%`;
+                canvas.style.backgroundPosition = `90% 80%`;
 
             }
 
@@ -479,7 +462,6 @@
             const numSlides = 6;
 
             let slide = document.getElementById(`slide`);
-
             let caption = document.getElementById(`caption`);
             let dots = document.getElementsByClassName(`indexDot`);
 

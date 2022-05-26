@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ext/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
@@ -36,7 +36,7 @@
 
         .footer {
 
-            width: calc(100% - 5px);
+            width: calc(100% - 4.5px);
             height: 60px;
             bottom: 0;
             left: 0;
@@ -46,6 +46,7 @@
             position:absolute;
             z-index: 1;
 
+            transition: border-color ease 0.1s;
         }
 
         #backgroundCanvas {
@@ -89,14 +90,14 @@
             padding: 2px;
 
             background-color: black;
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
             background-repeat: no-repeat;
             background-position: 50% 50%;
             background-size: 100% 100%;
 
             color: white;
             border-radius: 30px;
-            font-size: 18px;
+            font-size: 20px;
             text-align: center;
             cursor: pointer;
 
@@ -248,7 +249,7 @@
         }
         
     </style>
-    <title>Contact</title>
+    <title>Projects</title>
 </head>
 <body onload="playVisualizer()">
 
@@ -263,12 +264,12 @@
         <div class="projectDisplayContainer">
             <h1 class="header" style="margin-bottom: 20px;">Projects</h1>
             <span style="margin-bottom: 10px; font-size: 20px;">Click to open in new tab.</span>
-            <div class="projectDisplay" id="audioVisualizers"><p class="projectDisplayHeader">Audio Visualizers</p><p>This is a website that uses audio input from a user's microphone to generate a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
-            <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API</p></div>
-            <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">Mock Website Design Site</p><p>This is a website for a website design service where users can view pre-made templates, send a message to the webpage owner via the JSEmail service, and place an order for a website.</p></div>
+            <div class="projectDisplay" id="audioVisualizers"><p class="projectDisplayHeader">Audio Visualizers</p><p>This is a website that takes in audio input from a user's microphone and generates a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
+            <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
+            <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">Mock Website Design Site</p><p>This is a website for a hypothetical website design service where users can view pre-made templates, send a message to the webpage owner via the JSEmail service, and place an order for a website.</p></div>
             <div class="projectDisplay" id="sustainaBlinds"><p class="projectDisplayHeader">Sustaina Blinds</p><p>This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p></div>
             <div class="projectDisplay" id="game"><p class="projectDisplayHeader">Highway Racer Game</p><p>This is a 2D game made in JavaScript using the Canvas API and styled with HTML and CSS. The player moves by pressing W, A, S, and D or the arrow keys, the objective of the game is to doge the oncoming traffic for as long as possible and avoid touching the sidewalk.</p></div>
-            <div class="projectDisplay" id="pizza"><p class="projectDisplayHeader">Mock Pizza Site</p><p  >This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript</p></div>
+            <div class="projectDisplay" id="pizza"><p class="projectDisplayHeader">Mock Pizza Site</p><p  >This is a website for a hypothetical pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript</p></div>
 
             <div class="otherProjects">
     
@@ -294,16 +295,12 @@
     
             <!-- Facebook icon credit -->
             <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-            <div class="footerItem"><a href="#" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
+            <div class="footerItem"><a href="https://www.facebook.com/jasper.charlinski" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
         </div>
         
     </div>
 
     <canvas id="backgroundCanvas"> </canvas>
-
-    <a id="top"></a>
-
-
 
     <script>
 
@@ -344,13 +341,8 @@
 
         });
 
-
-        // -----------------------------------------------------------------------------------------------------
-
-
     </script>
 
-    <script src="script.js"></script>
-
+    <script src="ext/script.js"></script>
 
 </body>
