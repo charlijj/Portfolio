@@ -12,14 +12,22 @@
 
         .mainCanvas {
 
-            position:absolute;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
 
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
             width: 70%;
             height: 3600px;
-            margin:5% 15%;
+            
             z-index: 1;
 
-            background-color: rgb(255, 255, 255);
+            background-image: radial-gradient(circle at center, rgba(246, 66, 255, 0.5) , rgba(24, 116, 255, 0.5), rgb(255, 225, 75) 100%);
             border-radius: 5px;
             color: black;
 
@@ -90,6 +98,7 @@
             border-radius: 30px;
             font-size: 18px;
             text-align: center;
+            cursor: pointer;
 
             transition: border-radius ease 0.4s, width ease 1s;
         }
@@ -132,7 +141,6 @@
             border-radius: 30px;
             font-size: 18px;
             text-align: center;
-            cursor: pointer;
 
             transition: border-radius ease 0.4s, width ease 1s;
 
@@ -200,6 +208,11 @@
 
         @media only screen and (max-width: 800px) {
 
+            
+            .mainCanvas {
+
+                width: 80%;
+            }
 
             .projectDisplay{
 
@@ -213,7 +226,12 @@
 
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 550px) {
+
+            #mainCanvas {
+
+                width: 80%;
+            }
 
 
             .projectDisplay{
@@ -249,7 +267,7 @@
             <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API</p></div>
             <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">Mock Website Design Site</p><p>This is a website for a website design service where users can view pre-made templates, send a message to the webpage owner via the JSEmail service, and place an order for a website.</p></div>
             <div class="projectDisplay" id="sustainaBlinds"><p class="projectDisplayHeader">Sustaina Blinds</p><p>This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p></div>
-            <div class="projectDisplay" id="game"><p class="projectDisplayHeader">Highway Racer Game</p><p>This is a 2D game made in JavaScript using the Canvas API and styled with HTML and CSS. The player moves by using WASD or the arrow keys, the objective of the game is to doge the oncoming cars for as long as possible.</p></div>
+            <div class="projectDisplay" id="game"><p class="projectDisplayHeader">Highway Racer Game</p><p>This is a 2D game made in JavaScript using the Canvas API and styled with HTML and CSS. The player moves by pressing W, A, S, and D or the arrow keys, the objective of the game is to doge the oncoming traffic for as long as possible and avoid touching the sidewalk.</p></div>
             <div class="projectDisplay" id="pizza"><p class="projectDisplayHeader">Mock Pizza Site</p><p  >This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript</p></div>
 
             <div class="otherProjects">

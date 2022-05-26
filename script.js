@@ -1,6 +1,8 @@
 // Jasper Charlinski
 // for portfolio
 
+window.addEventListener('resize', playVisualizer);
+
 let canvas = document.getElementById(`backgroundCanvas`);
 let border = document.getElementById(`border`);
 
@@ -46,15 +48,15 @@ function playVisualizer() {
         analyser.getByteFrequencyData(dataArray);
         for (let i = 0; i < bufferLen; i++)
         {
-            barHeight = dataArray[i];
+            barHeight = dataArray[i] * 2;
 
             const hue = i * 10;
             
             ctx.fillStyle = `hsl(` + hue + `,100%, 50%)`;
 
-            let red = 100;
-            let blue = barHeight + 30;
-            let green = barHeight + 50;
+            // let red = 100;
+            // let blue = barHeight + 30;
+            // let green = barHeight + 50;
 
             border.style.border = `3px solid hsl(` + barHeight + `,100%, 50%)`;
             // border.style.border = `3px solid rgb(` + red + `, ` + blue + `, ` + green + `)`;
@@ -62,20 +64,16 @@ function playVisualizer() {
             ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 
             ctx.save();
-
             ctx.translate(canvas.width, 0);
             ctx.scale(-1, 1);   
-
             ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-
             ctx.restore();
 
-
-            x += barWidth + 5
+            x += barWidth + 5;
 
             if (x > 220)
             {
-                break
+                break;
             }
         }
         
