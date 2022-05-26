@@ -1,6 +1,6 @@
 body, html {
 
-    background-color: rgb(69, 69, 69);
+    background-color: rgb(255, 255, 255);
     color: white;
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -12,10 +12,11 @@ body, html {
     align-items: center;
     justify-content: center;
 
-    position: sticky;
-    z-index: 1;
+    position: fixed;
+    z-index: 2;
     top: 0;
-    width: auto;
+    width: 100%;
+    height: 20px;
 
     background-color: black;
 }
@@ -98,10 +99,6 @@ body, html {
     color: white;
 }
 
-.footer a:visited:hover {
-
-    color: rgb(195, 195, 195);
-}
 
 .footerItem {
 
@@ -117,13 +114,16 @@ body, html {
 
     width: 42px;
     height: 42px;
+    border-radius: 50%;
 
     margin: 0;
+
+    transition: background-color ease 0.2s;
+
 }
 
 .footerItem a:hover {
 
-    border-radius: 25px;
-    background-color: aliceblue;
+    background-color: white;
 }
 

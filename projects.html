@@ -12,30 +12,31 @@
 
         .mainCanvas {
 
-            width: 70%;
-            height: 75%;
-            margin:5% 15%;
             position:absolute;
+
+            width: 70%;
+            height: 3600px;
+            margin:5% 15%;
             z-index: 1;
-            background-color: white;
+
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
             color: black;
-            background-size: cover;
 
 
         }
 
         .footer {
 
-            width: 69.7%;
+            width: calc(100% - 5px);
             height: 60px;
             bottom: 0;
-            left: 15%;
+            left: 0;
             background-color: black;
             color: black;
             background-size: cover;
-            position:fixed;
+            position:absolute;
             z-index: 1;
-
 
         }
 
@@ -58,13 +59,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: static;
+            flex-direction: column;
             overflow: hidden;
 
-            margin: 6% auto;
+            margin: 0 auto;
 
             width: 100%;
-            height: 75%;
+            height: 100%;
         }
 
         .projectDisplay {
@@ -74,75 +75,159 @@
             justify-content: center;
             flex-direction: column;
             overflow: hidden;
-            width: 20%;
-            height: 100%;
-            margin: 0 2%;
+            width: 80%;
+            height: 12%;
+            margin-bottom: 50px;
             padding: 2px;
 
             background-color: black;
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 100% 100%;
+
             color: white;
+            border-radius: 30px;
+            font-size: 18px;
             text-align: center;
+
             transition: border-radius ease 0.4s, width ease 1s;
         }
 
-        .projectDisplay a {
+
+        .projectDisplay p {
 
             text-align: center;
             color: white;
-            font-weight: bold;
-            font-size: 30px;
-            margin-bottom:40%;
         }
+
         
         .projectDisplay:hover {
 
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 50px;
-            justify-content: flex-end;
-            width: 100%;
+            border-radius: 20px;
+            width: 85%;
 
         }
 
+        .projectDisplayHeader {
+
+            font-size: 25px;
+            margin-bottom: 0;
+        }
+
+        .otherProjects {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+
+            width: 80%;
+            height: 12%;
+            margin-bottom: 50px;
+            padding: 2px;
+
+            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+            border-radius: 30px;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+
+            transition: border-radius ease 0.4s, width ease 1s;
+
+
+        }
+
+        .otherProjects:hover {
+
+            border-radius: 20px;
+            width: 85%;
+
+        }
+
+        .otherProjects a {
+
+            color: blue;
+            text-decoration: none;
+        }
+
+        .otherProjects a:visited {
+
+            color: blue;
+        }
+
+        .otherProjects a:hover {
+
+            color: rgb(83, 83, 255);
+        }
+
+
         #audioVisualizers{
 
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
             background-image: url(img/visualizerBackground.jpg);
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
         }
 
         #keyboard{
 
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.7);
             background-image: url(img/keyboardBackground.jpg);
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
+
+        }
+
+        #jjweb{
+
+            background-image: url(img/jjwebBackground.JPG);
+
         }
 
         #pizza{
 
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.7);
             background-image: url(img/pizzaBackground.jpg);
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
+
         }
 
         #sustainaBlinds{
 
-            box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
             background-image: url(img/sustainaBlinds.jpg);
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
+
         }
 
-        #sustainaBlinds a {
+        #game{
 
-            margin-bottom: 25%;
+            background-image: url(img/highwayRacerBackground.JPG);
+
         }
 
+        @media only screen and (max-width: 800px) {
 
 
+            .projectDisplay{
 
+                font-size: 15px;
+            }
+
+            .projectDisplayHeader {
+
+                font-size: 18px;
+            }
+
+        }
+
+        @media only screen and (max-width: 500px) {
+
+
+            .projectDisplay{
+
+                background-size: cover;
+                font-size: 12px;
+            }
+
+            .projectDisplayHeader {
+
+                font-size: 15px;
+            }
+
+        }
         
     </style>
     <title>Contact</title>
@@ -151,86 +236,99 @@
 
     <div class="navBar">
 
-        <a href="index.html" style="border-right: 0;">Home</a>
-        <a href="contact.html" style="border-right: 0;">Contact</a>
-        <a href="projects.html">Projects</a>
+        <a href="index.html" style="border-right: 0; width: 50%;">Home</a>
+        <a href="#" style="width: 50%;">Projects</a>
 
     </div>
 
     <div class="mainCanvas">
         <div class="projectDisplayContainer">
-            <div class="projectDisplay" id="audioVisualizers"><p>Audio Visualizers</p><p style="font-size: 10px;">This is a website that uses audio input from a user's microphone to generate a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
-            <div class="projectDisplay" id="keyboard"><p>JS Keyboard</p><p style="font-size: 10px;">This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API</p></div>
-            <div class="projectDisplay" id="pizza"><p>Mock Pizza Site</p><p style="font-size: 10px;">This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript</p></div>
-            <div class="projectDisplay" id="sustainaBlinds"><p>Sustaina Blinds</p><p style="font-size: 10px;">This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p></div>
+            <h1 class="header" style="margin-bottom: 20px;">Projects</h1>
+            <span style="margin-bottom: 10px; font-size: 20px;">Click to open in new tab.</span>
+            <div class="projectDisplay" id="audioVisualizers"><p class="projectDisplayHeader">Audio Visualizers</p><p>This is a website that uses audio input from a user's microphone to generate a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
+            <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API</p></div>
+            <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">Mock Website Design Site</p><p>This is a website for a website design service where users can view pre-made templates, send a message to the webpage owner via the JSEmail service, and place an order for a website.</p></div>
+            <div class="projectDisplay" id="sustainaBlinds"><p class="projectDisplayHeader">Sustaina Blinds</p><p>This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p></div>
+            <div class="projectDisplay" id="game"><p class="projectDisplayHeader">Highway Racer Game</p><p>This is a 2D game made in JavaScript using the Canvas API and styled with HTML and CSS. The player moves by using WASD or the arrow keys, the objective of the game is to doge the oncoming cars for as long as possible.</p></div>
+            <div class="projectDisplay" id="pizza"><p class="projectDisplayHeader">Mock Pizza Site</p><p  >This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript</p></div>
 
+            <div class="otherProjects">
+    
+                <p class="projectDisplayHeader">C++ Projects</p>
+                <p>Employee management program: <a href="https://github.com/charlijj/CSCI161-project" target="_blank">GitHub Link</a></p>
+                <p>Circular Linked List: <a href="https://github.com/charlijj/Circular-Linked-List" target="_blank">GitHub Link</a></p>
+                <p>Binary Search Tree: <a href="https://github.com/charlijj/Binary-Search-Tree" target="_blank">GitHub Link</a></p>
+
+                <p class="projectDisplayHeader">Racket Projects</p>
+                <p>Fibonacci Sequence Calculator: <a href="fibonacciSeq.rkt" target="_blank">fibonacciSeq.rkt</a></p>
+
+            </div>
         </div>
+
+        <div class="footer" id="border">
+            <!-- GitHub icon credit -->
+            <!--<a target="_blank" href="https://icons8.com/icon/3tC9EQumUAuq/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+            <div class="footerItem"><a href="https://github.com/charlijj" target="_blank" style="width: 44px; height: 44px;"><img src="img/github-Icon.png" alt="GitHub-Icon"></a></div>
+    
+            <!-- LinkedIn icon credit -->
+            <!-- <a target="_blank" href="https://icons8.com/icon/60444/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+            <div class="footerItem"><a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src="img/linkedIn-Icon.png" alt="GitHub-Icon"></a></div>
+    
+            <!-- Facebook icon credit -->
+            <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+            <div class="footerItem"><a href="#" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
+        </div>
+        
     </div>
 
     <canvas id="backgroundCanvas"> </canvas>
 
-    <div class="footer" id="border">
-        <!-- GitHub icon credit -->
-        <!--<a target="_blank" href="https://icons8.com/icon/3tC9EQumUAuq/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-        <div class="footerItem"><a href="#" style="width: 44px; height: 44px;"><img src="img/github-Icon.png" alt="GitHub-Icon"></a></div>
+    <a id="top"></a>
 
-        <!-- LinkedIn icon credit -->
-        <!-- <a target="_blank" href="https://icons8.com/icon/60444/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-        <div class="footerItem"><a href="#"><img src="img/linkedIn-Icon.png" alt="GitHub-Icon"></a></div>
 
-        <!-- Facebook icon credit -->
-        <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-        <div class="footerItem"><a href="#"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
-
-    </div>
 
     <script>
 
-        document.getElementById(`audioVisualizers`).addEventListener(`mouseenter`, audioVisualizers);
-        document.getElementById(`audioVisualizers`).addEventListener(`mouseleave`, audioVisualizersReset);
+        document.getElementById(`audioVisualizers`).addEventListener(`click`, function () {
 
-        function audioVisualizers() {
-            document.getElementById(`audioVisualizers`).innerHTML = `<a href="https://charlijj.github.io/JS-Audio-Visualizers" target = "_blank">Try It Out!</a> <p style="font-size: 15px;">This is a website that uses audio input from a user's microphone to generate a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p>`
-        }  
-        function audioVisualizersReset() {
-            document.getElementById(`audioVisualizers`).innerHTML = `<p>Audio Visualizers</p><p style="font-size: 10px;">This is a website that uses audio input from a user's microphone to generate a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p>`
-        }  
+            window.open `https://charlijj.github.io/JS-Audio-Visualizers`;
+
+        });
+        
+        document.getElementById(`keyboard`).addEventListener(`click`, function () {
+
+            window.open `https://charlijj.github.io/JS-Oscillator`;
+
+        });
+
+        document.getElementById(`jjweb`).addEventListener(`click`, function () {
+
+            window.open `https://jjweb.ca`;
+
+        });
+
+        document.getElementById(`pizza`).addEventListener(`click`, function () {
+
+            window.open `https://charlijj.github.io/Mock-Pizza-Site`;
+
+        });
+
+        document.getElementById(`sustainaBlinds`).addEventListener(`click`, function () {
+
+            window.open `https://www.ethanposner.com/sustainablinds`;
+
+        });
+
+        document.getElementById(`game`).addEventListener(`click`, function () {
+
+            window.open `https://charlijj.github.io/Highway-Racer-Game/`;
+
+
+        });
+
 
         // -----------------------------------------------------------------------------------------------------
 
-        document.getElementById(`keyboard`).addEventListener(`mouseenter`, keyboard);
-        document.getElementById(`keyboard`).addEventListener(`mouseleave`, keyboardReset);
-
-        function keyboard() {
-            document.getElementById(`keyboard`).innerHTML = `<a href="https://charlijj.github.io/JS-Keybaord" target = "_blank">Try It Out!</a> <p style="font-size: 15px;">This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API.</p>`
-        }  
-        function keyboardReset() {
-            document.getElementById(`keyboard`).innerHTML = `<p>JS Keyboard</p><p style="font-size: 10px;">This is a website that uses a user's keyboard input to generate the corresponding note using an oscillator. The backend is programmed in JavaScript using the WebAudio API.</p>`
-        }  
-
-        // -----------------------------------------------------------------------------------------------------
-
-        document.getElementById(`pizza`).addEventListener(`mouseenter`, pizza);
-        document.getElementById(`pizza`).addEventListener(`mouseleave`, pizzaReset);
-
-        function pizza() {
-            document.getElementById(`pizza`).innerHTML = `<a href="https://charlijj.github.io/Mock-Pizza-Site" target = "_blank">Visit</a> <p style="font-size: 15px;">This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript.</p>`
-        }
-        function pizzaReset() {
-            document.getElementById(`pizza`).innerHTML = `<p>Mock Pizza Site</p><p style="font-size: 10px;">This is a website for a mock pizza restaurant where customers can browse the menu and then order delivery or take out. The price and order wait time is calculated using JavaScript.</p>`
-        }  
-
-        // -----------------------------------------------------------------------------------------------------
-
-        document.getElementById(`sustainaBlinds`).addEventListener(`mouseenter`, sustainaBlinds);
-        document.getElementById(`sustainaBlinds`).addEventListener(`mouseleave`, sustainaBlindsReset);
-
-        function sustainaBlinds() {
-            document.getElementById(`sustainaBlinds`).innerHTML = `<a href="https://www.ethanposner.com/sustainablinds" target = "_blank">Try It Out!</a> <p style="font-size: 15px;">This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p>`
-        }
-        function sustainaBlindsReset() {
-            document.getElementById(`sustainaBlinds`).innerHTML = `<p>Sustaina Blinds</p><p style="font-size: 10px;">This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p>`
-        }  
 
     </script>
 
