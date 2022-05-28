@@ -14,19 +14,14 @@ if (window.innerWidth > 600)
     window.addEventListener('resize', playVisualizer);
 }
 
-const audioCtx = new AudioContext();
-const analyser = audioCtx.createAnalyser();
-const audio = new Audio(`ext/song.mp3`);
 
 // --------------------------------------------------------------
 
 function playVisualizer() {
-
-    if (!audio.paused)
-    {
-        return;
-    }
     
+    const audioCtx = new AudioContext();
+    const analyser = audioCtx.createAnalyser();
+    const audio = new Audio(`ext/song.mp3`);
     const audioSource = audioCtx.createMediaElementSource(audio);
     audioSource.connect(analyser);
 
