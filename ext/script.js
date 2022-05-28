@@ -1,5 +1,4 @@
 // Jasper Charlinski
-// for portfolio
 
 
 let canvas = document.getElementById(`backgroundCanvas`);
@@ -15,15 +14,20 @@ if (window.innerWidth > 600)
     window.addEventListener('resize', playVisualizer);
 }
 
+const audioCtx = new AudioContext();
+const analyser = audioCtx.createAnalyser();
+const audio = new Audio(`ext/song.mp3`);
+
 // --------------------------------------------------------------
 
 function playVisualizer() {
 
-    const audioCtx = new AudioContext();
-    let analyser = audioCtx.createAnalyser();
-
-    const audio = new Audio(`ext/song.mp3`);
-    let audioSource = audioCtx.createMediaElementSource(audio);
+    if (!audio.paused)
+    {
+        return;
+    }
+    
+    const audioSource = audioCtx.createMediaElementSource(audio);
     audioSource.connect(analyser);
 
     audio.play();
@@ -34,7 +38,7 @@ function playVisualizer() {
     analyser.fftSize = 1024;
 
     //Bin count is always half of the fft size and is the number of canvas elements that are to be drawn.
-    let bufferLen = analyser.frequencyBinCount;
+    const bufferLen = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLen);
 
 
