@@ -12,7 +12,6 @@
 
         .mainCanvas {
 
-            
             display: flex;
             align-items: center;
             justify-content: center;
@@ -23,15 +22,13 @@
             top: 0;
             transform: translate(-50%, 0);
             width: 70%;
-            height: 3600px;
+            height: 3800px;
             
             z-index: 1;
 
             background-image: radial-gradient(circle at center, rgba(246, 66, 255, 0.5) , rgba(24, 116, 255, 0.5), rgb(255, 225, 75) 100%);
             border-radius: 5px;
             color: black;
-
-
         }
 
         .footer {
@@ -42,7 +39,7 @@
             left: 0;
             background-color: black;
             color: black;
-            background-size: cover;
+            border: 3px solid black;
             position:absolute;
             z-index: 1;
 
@@ -57,10 +54,56 @@
             position:fixed;
             left:0;
             top:0;
-            z-index: 0;
 
             background-color: black;
             color: antiquewhite;
+        }
+
+        .playPauseBackgroundContainer {
+
+            position:fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            left: 0;
+            top: 10%;
+
+            width: 15%;
+            height: 10%;
+        }
+
+        #playPauseBackground {
+
+            position:relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            transition: background-color ease 0.4s;
+        }
+
+        #playPauseBackground:hover 
+        {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        #playPauseBackgroundCaption {
+
+            position:relative;
+
+            margin: 5px 0;
+
+            width: 200px;
+
+            text-align: center;
+            color: white;
         }
 
         .projectDisplayContainer {
@@ -116,7 +159,6 @@
 
             border-radius: 20px;
             width: 85%;
-
         }
 
         .projectDisplayHeader {
@@ -144,15 +186,12 @@
             text-align: center;
 
             transition: border-radius ease 0.4s, width ease 1s;
-
-
         }
 
         .otherProjects:hover {
 
             border-radius: 20px;
             width: 85%;
-
         }
 
         .otherProjects a {
@@ -180,31 +219,26 @@
         #keyboard{
 
             background-image: url(img/keyboardBackground.jpg);
-
         }
 
         #jjweb{
 
             background-image: url(img/jjwebDesignBackground.jpg);
-
         }
 
         #pizza{
 
             background-image: url(img/pizzaBackground.jpg);
-
         }
 
         #sustainaBlinds{
 
             background-image: url(img/sustainaBlinds.jpg);
-
         }
 
         #game{
 
             background-image: url(img/gameBackground.jpg);
-
         }
 
         @media only screen and (max-width: 800px) {
@@ -223,6 +257,13 @@
             .projectDisplayHeader {
 
                 font-size: 18px;
+            }
+
+            .playPauseBackgroundContainer {
+
+                opacity: 0;
+                width: 0;
+                height: 0;
             }
 
         }
@@ -250,7 +291,7 @@
     </style>
     <title>Projects</title>
 </head>
-<body onload="playVisualizer()">
+<body>
 
     <div class="navBar">
 
@@ -260,6 +301,7 @@
     </div>
 
     <div class="mainCanvas">
+
         <div class="projectDisplayContainer">
             <h1 class="header" style="margin-bottom: 20px;">Projects</h1>
             <span style="margin-bottom: 10px; font-size: 20px;">Click to open in new tab.</span>
@@ -290,16 +332,21 @@
     
             <!-- LinkedIn icon credit -->
             <!-- <a target="_blank" href="https://icons8.com/icon/60444/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-            <div class="footerItem"><a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src="img/linkedIn-Icon.png" alt="GitHub-Icon"></a></div>
+            <div class="footerItem"><a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank"><img src="img/linkedIn-Icon.png" alt="Linkedin-Icon"></a></div>
     
             <!-- Facebook icon credit -->
             <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
-            <div class="footerItem"><a href="https://www.facebook.com/jasper.charlinski" target="_blank"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
+            <div class="footerItem"><a href="https://www.facebook.com/jasper.charlinski" target="_blank"><img src="img/facebook-Icon.png" alt="Facebook-Icon"></a></div>
         </div>
         
     </div>
 
-    <canvas id="backgroundCanvas"> </canvas>
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div class="playPauseBackgroundContainer">
+        <p id="playPauseBackgroundCaption">press to play animation</p>
+        <div id="playPauseBackground" onclick="playPauseButton()"><img src="img/playButton.png" alt="playPauseBackground"></div>
+    </div>
 
     <script>
 

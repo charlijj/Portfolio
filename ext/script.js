@@ -1,31 +1,52 @@
 // Jasper Charlinski
 
+const canvas = document.getElementById(`backgroundCanvas`);
+const border = document.getElementById(`border`);
 
-let canvas = document.getElementById(`backgroundCanvas`);
-let border = document.getElementById(`border`);
-
-let ctx = canvas.getContext(`2d`);
+const ctx = canvas.getContext(`2d`);
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-if (window.innerWidth > 600)
-{
-    window.addEventListener('resize', playVisualizer);
-}
-
-
 // --------------------------------------------------------------
 
-function playVisualizer() {
-    
+function playPauseButton () {
+
+    const playPauseButton = document.getElementById(`playPauseBackground`);
+
+    if (playPauseButton.innerHTML == `<img src="img/playButton.png" alt="playPauseBackground">`)
+    {
+        playPauseButton.innerHTML = `<img src="img/pauseButton.png" alt="playPauseBackground">`; 
+        playVisualizer(true);
+    }
+    else
+    {
+        playPauseButton.innerHTML = `<img src="img/playButton.png" alt="playPauseBackground">`; 
+        playVisualizer(false);
+    }
+
+}
+
+function playVisualizer(play) {
+
     const audioCtx = new AudioContext();
     const analyser = audioCtx.createAnalyser();
     const audio = new Audio(`ext/song.mp3`);
     const audioSource = audioCtx.createMediaElementSource(audio);
     audioSource.connect(analyser);
 
-    audio.play();
+    let stop;
+
+    if (play)
+    {
+        audio.play();
+        stop = false;
+    }
+    else
+    {
+        audio.pause();
+        stop = true;
+    }
 
     //An unsigned integer, representing the window size of the FFT, given in number of samples. 
     //A higher value will result in more details in the frequency domain but fewer details in the time domain.
@@ -36,12 +57,13 @@ function playVisualizer() {
     const bufferLen = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLen);
 
-
     function animateFullRainbowBar() {
 
-        if (audio.paused)
+        if (stop)
         {
-            audio.play();
+            cancelAnimationFrame(animateFullRainbowBar);
+            window.location.reload();
+            return;
         }
 
         const barWidth = canvas.width / bufferLen;
@@ -49,6 +71,7 @@ function playVisualizer() {
         let x = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         analyser.getByteFrequencyData(dataArray);
+
         for (let i = 0; i < bufferLen; i++)
         {
             barHeight = dataArray[i] * 2;
@@ -74,7 +97,7 @@ function playVisualizer() {
 
             x += barWidth + 5;
 
-            if (x > 220)
+            if (x > canvas.width/2)
             {
                 x = 0;
                 break;
@@ -84,6 +107,6 @@ function playVisualizer() {
         requestAnimationFrame(animateFullRainbowBar);
     }
 
-    animateFullRainbowBar();
+    animateFullRainbowBar(stop);
 
 }
