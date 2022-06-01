@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"> 
     <style>
 
         #headingCanvas {
@@ -36,26 +37,24 @@
             justify-content: center;
             flex-direction: column;
 
-            width: 80%;
+            width: 100%;
             height: 50%;
             margin: 0;
 
-            border: 2px solid black;
-            border-radius: 20px;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-image: radial-gradient(circle at left, rgba(255, 101, 101, 0.4) , rgba(255, 169, 40, 0.2), rgba(105, 157, 255, 0.4) 100%);
+            color: white;
             font-size: 80px;
+            font-weight: 900;
+            font-stretch: ultra-expanded;
 
-            transition: width ease 1s, border-radius ease 1s;
-
-        }
-
-        .headingBanner:hover {
-
-            width: 82%;
-            border-radius: 10px;
-
+            transition: width ease 1s, border-radius ease 1s, color ease 5s;
 
         }
+
+        /* .headingBanner:hover {
+
+            color: rgb(227, 135, 255);
+        } */
 
         #mainCanvas {
 
@@ -289,7 +288,7 @@
             .headingBanner {
 
                 font-size: 23px;
-                width: 90%;
+                width: 95%;
             }
 
             #slide {
@@ -336,9 +335,10 @@
     </style>
     <title>Jasper's Portfolio</title>
 </head>
-<body>
 
-    <div class="navBar">
+<body onscroll="navBarChange()">
+
+    <div id="navBar">
 
         <a href="#" style="border-right: 0;">Home</a>
         <a href="#contact" style="border-right: 0;">Contact</a>
@@ -347,7 +347,7 @@
     </div>
 
     <div id="headingCanvas">
-        <div class="headingBanner">
+        <div class="headingBanner" id="headingBanner">
             <p>Welcome to Jasper's Portfolio</p>
         </div>
     </div>
@@ -419,6 +419,7 @@
         canvas.addEventListener(`mouseleave`, () => {moveCvs(event)});
         canvas.addEventListener(`click`, () => {moveCvs(event)});
 
+        
         function moveCvs(event) {
 
 
@@ -461,9 +462,9 @@
 
             const numSlides = 6;
 
-            let slide = document.getElementById(`slide`);
-            let caption = document.getElementById(`caption`);
-            let dots = document.getElementsByClassName(`indexDot`);
+            const slide = document.getElementById(`slide`);
+            const caption = document.getElementById(`caption`);
+            const dots = document.getElementsByClassName(`indexDot`);
 
             slideIndex += n;
 
@@ -536,7 +537,67 @@
 
         }
 
+        const headingBanner = document.getElementById(`headingBanner`);
+        let randomColorCount = 0;
+
+        headingBanner.addEventListener(`mouseover`, function () {
+
+            let red;
+            let green;
+            let blue;
+
+            switch (randomColorCount)
+            {
+                case 0:
+                    red = Math.random() * 1000;
+                    green = Math.random() * 300;
+                    blue = Math.random() * 400;
+                    break;
+                case 1:
+                    red = Math.random() * 100;
+                    green = Math.random() * 500;
+                    blue = Math.random() * 400;
+                    break;
+                case 3:
+                    red = Math.random() * 600;
+                    green = Math.random() * 300;
+                    blue = Math.random() * 1000;
+            }
+
+            randomColorCount++;
+
+            if (randomColorCount > 3)
+            {
+                randomColorCount = 0;
+            }
+
+            if (red > 255)
+            {
+                red = 255;
+            }
+
+            if (green > 255)
+            {
+                green = 255;
+            }
+
+            if (blue > 255)
+            {
+                blue = 255;
+            }
+
+            headingBanner.style.color = `rgb(` + red + `, ` + green +`, ` + blue + `)`;
+        });
+
+        headingBanner.addEventListener(`mouseleave`, function () {
+
+            headingBanner.style.color = `white`;
+        });
+
+
     </script>
+
+    <script src="ext/navBarScript.js"></script>
     
 </body>
 </html>
