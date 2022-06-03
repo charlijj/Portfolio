@@ -120,6 +120,12 @@
             height: 100%;
         }
 
+        .projectDisplayContainer span {
+
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
         .projectDisplay {
 
             display: flex;
@@ -304,10 +310,9 @@
 
         <div class="projectDisplayContainer">
             <h1 class="header" style="margin-bottom: 20px;">Projects</h1>
-            <span style="margin-bottom: 10px; font-size: 20px;">Click to open in new tab.</span>
-            <span style="margin-bottom: 10px; font-size: 20px;">GitHub repository link at bottom of page.</span>
+            <span>Click a project to open in new tab</span>
             <div class="projectDisplay" id="audioVisualizers"><p class="projectDisplayHeader">Audio Visualizers</p><p>This is a website that intakes microphone input from a user and generates a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
-            <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">JJWEB Website Design</p><p>This is a website for a hypothetical website design service where users can view pre-made templates, send a message to the webpage owner via the JSEmail service, and place an order for a website.</p></div>
+            <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">JJWEB Website Design</p><p>This is the website for my web design service. Users can view pre-made templates, send me a message via the JSEmail service, and place an order for a website.</p></div>
             <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a oscillator keyboard that the user can play with the keys on their keyboard (not available on mobile yet). There are four waveforms to choose from, a audio visualizer in the background, and a demo song. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
             <div class="projectDisplay" id="sustainaBlinds"><p class="projectDisplayHeader">Sustaina Blinds</p><p>This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.</p></div>
             <div class="projectDisplay" id="game"><p class="projectDisplayHeader">Highway Racer Game</p><p>This is a 2D game made in JavaScript using the Canvas API and styled with HTML and CSS. The player moves by pressing W, A, S, and D or the arrow keys, the objective of the game is to doge the oncoming traffic for as long as possible and avoid touching the sidewalk.</p></div>
@@ -324,6 +329,7 @@
                 <p>Fibonacci Sequence Calculator: <a href="ext/fibonacciSeq.rkt" target="_blank">fibonacciSeq.rkt</a></p>
 
             </div>
+
         </div>
 
         <div class="footer projectFooter" id="border">
