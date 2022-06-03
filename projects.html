@@ -22,7 +22,7 @@
             top: 0;
             transform: translate(-50%, 0);
             width: 70%;
-            height: 3900px;
+            height: 4000px;
             
             z-index: 1;
 
@@ -124,6 +124,30 @@
 
             margin-bottom: 10px;
             font-size: 20px;
+        }
+
+        .projectDisplayContainer a {
+
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+
+            transition: color ease 0.4s;
+        }
+
+        .projectDisplayContainer a:hover {
+
+            color: rgb(48, 48, 48);
+        }
+
+        .projectDisplayContainer a:visited {
+
+            color: black;
+        }
+
+        .projectDisplayContainer a:visited:hover {
+
+            color: rgb(48, 48, 48);
         }
 
         .projectDisplay {
@@ -310,7 +334,8 @@
 
         <div class="projectDisplayContainer">
             <h1 class="header" style="margin-bottom: 20px;">Projects</h1>
-            <span>Click a project to open in new tab</span>
+            <span>All of my projects code is available to view on my <a href="https://github.com/charlijj" target="_blank">GitHub.</a></span>
+            <span>Click on a project to open it in new tab.</span>
             <div class="projectDisplay" id="audioVisualizers"><p class="projectDisplayHeader">Audio Visualizers</p><p>This is a website that intakes microphone input from a user and generates a wide array of audio visualizers. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
             <div class="projectDisplay" id="jjweb"><p class="projectDisplayHeader">JJWEB Website Design</p><p>This is the website for my web design service. Users can view pre-made templates, send me a message via the JSEmail service, and place an order for a website.</p></div>
             <div class="projectDisplay" id="keyboard"><p class="projectDisplayHeader">JS Keyboard</p><p  >This is a oscillator keyboard that the user can play with the keys on their keyboard (not available on mobile yet). There are four waveforms to choose from, a audio visualizer in the background, and a demo song. The backend is programmed in JavaScript using the WebAudio API as well as the Canvas API.</p></div>
