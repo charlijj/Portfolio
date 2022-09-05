@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ext/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet"> 
+    <title>Contact</title>
+    <style>
+
+        #mainCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 2100px;
+            margin: 0;
+
+            background-image: radial-gradient(circle at center, rgba(43, 100, 255, 0.5) , rgba(255, 40, 201, 0.5), rgb(105, 157, 255) 100%);
+            color: black;
+            }
+
+        .contactInfoContainer {
+            
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            margin: 0 auto;
+            width: 100%;
+            height: 60%;
+
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .contactInfoItem {
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 90%;
+
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .contactInfoItem a {
+
+            color: black;
+            text-decoration: none;
+
+        }
+
+        .contactInfoItem a:hover {
+
+            color: rgb(38, 38, 38);
+            text-decoration: underline;
+
+        }
+
+        #inquiryTextbox {
+
+            width: 50%;
+            height: 800px;
+            padding: 0 20px;
+            resize: none;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+
+            scrollbar-color: rgba(86, 86, 86, 0.4) rgba(255,255,255, 0);
+            scrollbar-width: thin;
+
+            transition: border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #inquiryTextbox:hover {
+
+            border-radius: 2px;
+            width: 52%;
+
+        }
+
+        .userInputContainer {
+
+            text-align: center;
+            width: 100%;
+            height: 40px;
+
+            margin: 50px 0;
+
+        }
+
+        .userInput {
+
+            width: 30%;
+            height: 100%;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+
+        #sendMessageButton {
+
+            width: 50%;
+            height: 100px;
+            margin-top: 50px;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            
+            font-family: 'Montserrat', sans-serif;
+
+            transition: border-radius ease 0.4s, background-color ease 0.4s , width ease 0.4s;
+
+        }
+
+        #sendMessageButton:hover {
+
+            background-color: rgba(205, 205, 205, 0.3);
+            width: 55%;
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .myContactInfoHeader {
+
+            text-align: center;
+        }
+
+        .myContactInfoContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 75%;
+            height: 25%;
+
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+
+        }
+
+        .myContactInfo {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 50px;
+            font-size: 30px;
+
+            width: 100%;
+            height: 5%;
+        }
+
+        .myContactInfo a {
+
+            color: rgb(60, 60, 60);
+            text-decoration: none;
+        }
+
+
+
+        @media only screen and (max-width: 700px) {
+
+            #inquiryTextbox {
+
+                width: 80%;
+            }
+
+            #inquiryTextbox:hover {
+
+                width: 85%;
+            }
+
+            #sendMessageButton {
+
+                width: 80%;
+            }
+
+            #sendMessageButton:hover {
+
+                width: 85%;
+            }
+
+        }
+    </style>
+</head>
+<body onscroll="navBarChange()">
+
+    <div id="navBar">
+
+        <a href="index.html" style="border-right: 0;">Home</a>
+        <a href="#">Contact</a>
+        <a href="ext/jasperCharlinski-resume.pdf" target="_blank" >Resume</a>
+
+    </div>
+
+    <div id="mainCanvas">
+
+        <div id="top"></div>
+        <h1 class="header" style="margin: 2% 0;">Contact</h1>
+        <div class="contactInfoContainer">
+            <div class="contactInfoItem">
+                <p>Send an inquiry bellow and I will get back to you as soon as possible.</p>
+                <textarea  id="inquiryTextbox" maxlength="1000"></textarea>
+                <div class="userInputContainer"><span><strong>Name: &nbsp;</strong></span><input type="text" id="nameInput" class="userInput"></div>
+                <div class="userInputContainer"><span><strong>Email: &nbsp;</strong></span><input type="email" id="emailInput" class="userInput"></div>
+                <div class="userInputContainer"><span><strong>Phone: &nbsp;</strong></span><input type="text" id="phoneInput" class="userInput"></div>
+                <input type="button" id="sendMessageButton" value="Send Message">
+            </div>
+         </div>
+
+         <h1 class="myContactInfoHeader">My Contact Information</h1>
+         <div class="myContactInfoContainer" >
+            <div class="myContactInfo">Email: &nbsp;<a href="mailto:jjcharlinski@gmail.com" target="_blank">jjcharlinski@gmail.com</a></div>
+            <div class="myContactInfo">Mobile: &nbsp;604-399-9490</div>
+            <div class="myContactInfo">GitHub: &nbsp;<a href="https://github.com/charlijj" target="_blank">charlijj</a></div>
+            <div class="myContactInfo">LinkedIn: &nbsp; <a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238" target="_blank">Jasper Charlinski</a></div>
+        </div>
+
+    </div>
+
+    <script src="ext/navBarScript.js"></script>
+
+</body>
+</html>
