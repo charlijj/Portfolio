@@ -31,14 +31,13 @@ body, html {
     justify-content: center;
 
     height: 100%;
-    width: 33.33%;
+    width: 50%;
 
     color: white;
     text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.4);
 
     transition: background-color ease 0.4s, height ease 0.4s;
-
 }
 
 #navBar a:hover { 
@@ -57,7 +56,6 @@ body, html {
     background-color: white;
     color: black;
 }
-
 
 /* -------------------------------------------------------------------------------------------------- */
 
@@ -103,7 +101,6 @@ body, html {
 .footerItem {
 
     margin: 0 5%;
-
 }
 
 .footerItem a {
@@ -119,7 +116,6 @@ body, html {
     margin: 0;
 
     transition: background-color ease 0.2s;
-
 }
 
 .footerItem a:hover {
