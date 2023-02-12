@@ -2,7 +2,7 @@
 
 <p align="center">This is my personal website that includes a showcase of my website projects and some personal information about myself.</p>
 <br/>
-<p align="center"> Vist the website at this link: <b><a href="https://jjcharlinski.ca">jjcharlinski.ca</a></b>
+<p align="center"> Vist the website at this link: <b><a href="https://jjcharlinski.ca" target="blank">jjcharlinski.ca</a></b>
 <h2>Projects:</h2>
 
 <h4>Audio Visualizers</h4>
