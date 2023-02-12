@@ -21,4 +21,5 @@ A home page for a web design service I ran during the summer of 2022 for local b
 <br/>
 
 <h4>Sustaina Blinds</h4>
-This is an interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.
+<br/>
+A interactive diagram website that is used to calculate the amount of heat gain a household window is producing based on the direction the window is facing, the time of year, and the time of day. This project was used as an entry to the Technation sustainable design and pandemic relief competition in which we placed top 5.
