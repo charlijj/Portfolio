@@ -1,7 +1,7 @@
 <h2 align="center">My Personal Protfolio</h2>
 
 <p align="center">This is my personal website that includes a showcase of my website projects and some personal information about myself.</p>
-
+<br/>
 <h2>Projects:</h2>
 
 <h4>Audio Visualizers</h4>
